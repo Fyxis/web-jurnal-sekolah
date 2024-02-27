@@ -22,7 +22,7 @@ session_start();
       </h1>
       <select name="select_className" id="cmb_select-class" class="text-xl w-4/5 text-slate-900 rounded-md px-1" onchange="this.form.submit()">
         <?php
-        $q_read = "SELECT * FROM {$TB_KELAS_NAME} ORDER BY nama_kelas ASC";
+        $q_read = "SELECT * FROM $TB_KELAS_NAME ORDER BY nama_kelas ASC";
         $result = mysqli_query($connection, $q_read);
         ?>
         <?php if (mysqli_num_rows($result) == 0) : ?>

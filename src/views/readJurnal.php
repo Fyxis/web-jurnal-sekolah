@@ -5,12 +5,12 @@ session_start();
 
 $jurnalSelected = $_GET['select_className'];
 
-$q_read_nama = "SELECT * FROM tb_kelas WHERE nama_kelas = '$jurnalSelected'";
+$q_read_nama = "SELECT * FROM $TB_KELAS_NAME WHERE nama_kelas = '$jurnalSelected'";
 $runQueryReadNama = mysqli_query($connection, $q_read_nama);
 $resultQueryReadNama = mysqli_fetch_assoc($runQueryReadNama);
 
 $idKelasSelected = $resultQueryReadNama['id_kelas'];
-$q_read_id = "SELECT * FROM tb_jurnal WHERE id_kelas = '$idKelasSelected'";
+$q_read_id = "SELECT * FROM $TB_JURNAL_NAME WHERE id_kelas = '$idKelasSelected'";
 $runQueryReadId = mysqli_query($connection, $q_read_id);
 
 $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
