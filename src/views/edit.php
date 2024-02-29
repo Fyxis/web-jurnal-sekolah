@@ -39,10 +39,10 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
   <script src="../../assets/js/tailwind.js"></script>
 </head>
 
-<body class="antialiased dark:text-slate-100 bg-white dark:bg-slate-900">
-  <div class="h-screen flex items-center justify-center">
-    <form action="../controller/function_edit.php?id_jurnal=<?= $id_jurnal ?>" method="post" class="flex flex-col gap-4 w-4/12">
-      <h1 class="text-4xl font-semibold mb-2">
+<body class="antialiased dark:text-slate-100 bg-white dark:bg-slate-900 relative top-8 pb-11">
+  <div class="h-screen flex justify-center ">
+    <form action="../controller/function_edit.php?id_jurnal=<?= $id_jurnal ?>" method="post" class="flex flex-col gap-4 w-full md:w-4/12 px-5 md:px-0">
+      <h1 class="text-4xl font-semibold mb-2 text-center">
         EDIT JURNAL KELAS <?= $kelas ?>
       </h1>
       <div class="flex flex-row gap-3">
