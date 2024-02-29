@@ -368,6 +368,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
     </div>
   </div>
   <?php if ($_SESSION['username'] == $ADMIN_USERNAME && $_SESSION['password'] == $ADMIN_PASSWORD) : ?>
+    <script>
       const validateOnlyNumber = (evt) => {
         var charCode = (evt.which) ? evt.which : event.keyCode;
         if (charCode > 31 && (charCode < 48 || charCode > 57)) {
