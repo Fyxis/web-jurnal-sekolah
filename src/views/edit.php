@@ -57,7 +57,7 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
       </div>
       <div>
         <label for="mata_pelajaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mata Pelajaran</label>
-        <input type="text" name="mata_pelajaran" id="mata_pelajaran" value="<?= $mataPelajaran ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+        <input type="text" name="mata_pelajaran" id="mata_pelajaran" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)" value="<?= $mataPelajaran ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
       </div>
       <div class="flex flex-row gap-3">
         <div class="flex flex-col w-28">
@@ -71,25 +71,25 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
       </div>
       <div>
         <label for="materi_pembelajaran" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Materi Pembelajaran</label>
-        <input type="text" name="materi_pembelajaran" id="materi_pembelajaran" value="<?= $materiPembelajaran ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+        <input type="text" name="materi_pembelajaran" id="materi_pembelajaran" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)" value="<?= $materiPembelajaran ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
       </div>
       <div class="flex flex-row gap-2">
         <div class="flex flex-col w-full">
-          <label for="jumlah_siswa_hadir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Hadir</label>
-          <input type="text" name="jumlah_siswa_hadir" id="jumlah_siswa_hadir" value="<?= $jumlahSiswaHadir ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-        </div>
-        <div class="flex flex-col w-full">
           <label for="jumlah_siswa_izin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Izin</label>
-          <input type="text" name="jumlah_siswa_izin" id="jumlah_siswa_izin" value="<?= $jumlahSiswaIzin ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+          <input type="text" autocomplete="off" value="0" oninput="operationSiswaHadir()" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_izin" id="jumlah_siswa_izin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
         </div>
 
         <div class="flex flex-col w-full">
           <label for="jumlah_siswa_sakit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Sakit</label>
-          <input type="text" name="jumlah_siswa_sakit" id="jumlah_siswa_sakit" value="<?= $jumlahSiswaSakit ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+          <input type="text" autocomplete="off" value="0" oninput="operationSiswaHadir()" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_sakit" id="jumlah_siswa_sakit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
         </div>
         <div class="flex flex-col w-full">
           <label for="jumlah_siswa_alpha" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Alpha</label>
-          <input type="text" name="jumlah_siswa_alpha" id="jumlah_siswa_alpha" value="<?= $jumlahSiswaAlpha ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+          <input type="text" autocomplete="off" value="0" oninput="operationSiswaHadir()" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_alpha" id="jumlah_siswa_alpha" class="bg-gray-50 border border-gray-300 number-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
+        </div>
+        <div class="flex flex-col w-full">
+          <label for="jumlah_siswa_hadir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Hadir</label>
+          <input type="text" autocomplete="off" oninput="operationSiswaHadir()" value="<?= $jumlahSiswaHadir ?>" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_hadir" id="jumlah_siswa_hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
         </div>
       </div>
 
@@ -111,6 +111,22 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
     </form>
   </div>
   <script>
+    // Substraction siswa hadir when user input siswa izin, siswa sakit, siswa alpha
+    const operationSiswaHadir = () => {
+      let siswa_hadir = document.getElementById('jumlah_siswa_hadir');
+      let siswa_izin = parseInt(document.getElementById('jumlah_siswa_izin').value) || 0;
+      let siswa_sakit = parseInt(document.getElementById('jumlah_siswa_sakit').value) || 0;
+      let siswa_alpha = parseInt(document.getElementById('jumlah_siswa_alpha').value) || 0;
+
+      if (siswa_izin || siswa_sakit || siswa_alpha) {
+        siswa_hadir.value = <?= $jumlahSiswaHadir ?> - siswa_izin - siswa_sakit - siswa_alpha;
+      } else {
+        // Jika tidak ada izin, sakit, atau alpha, maka isi dengan jumlah siswa
+        siswa_hadir.value = <?= $jumlahSiswaHadir ?>;
+      }
+    }
+
+    // Generate input name siswa field (izin, sakit, alpha)
     const generateColumnSiswa = () => {
       const
         jumlah_siswa_izin = document.getElementById("jumlah_siswa_izin"),
@@ -127,59 +143,13 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
         nama_siswa_sakit = document.getElementById("nama_siswaSakit"),
         nama_siswa_alpha = document.getElementById("nama_siswaAlpha")
 
-      // Siswa Izin
-      if (jumlah_siswa_izin.value >= 1) {
-        nama_siswa_izin.classList.remove('hidden')
-        const nilaiSiswaIzin = <?= json_encode($nilaiStringSiswaIzin); ?>;
-        const countingSiswaIzin = <?= count($nilaiStringSiswaIzin) ?>;
-        for (let i = 0; i < countingSiswaIzin; i++) {
-          input_siswa_izin.innerHTML += `
-              <input type="text" name="nama_siswa_izin[]" value=${nilaiSiswaIzin[i]} id="nama_siswa_izin" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-            `
-        }
-      } else {
-        input_siswa_izin.innerHTML = ""
-        nama_siswa_izin.classList.add('hidden')
-      }
-
-
-      // Siswa Sakit
-      if (jumlah_siswa_sakit.value >= 1) {
-        nama_siswa_sakit.classList.remove('hidden')
-        const nilaiSiswaSakit = <?= json_encode($nilaiStringSiswaSakit); ?>;
-        const countingSiswaSakit = <?= count($nilaiStringSiswaSakit) ?>;
-        for (let i = 0; i < countingSiswaSakit; i++) {
-          input_siswa_sakit.innerHTML += `
-              <input type="text" name="nama_siswa_sakit[]" value=${nilaiSiswaSakit[i]} id="nama_siswa_sakit" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-            `
-        }
-      } else {
-        input_siswa_sakit.innerHTML = ""
-        nama_siswa_sakit.classList.add('hidden')
-      }
-
-      // Siswa Alpha
-      if (jumlah_siswa_alpha.value >= 1) {
-        nama_siswa_alpha.classList.remove('hidden')
-        const nilaiSiswaAlpha = <?= json_encode($nilaiStringSiswaAlpha); ?>;
-        const countingSiswaAlpha = <?= count($nilaiStringSiswaAlpha) ?>;
-        for (let i = 0; i < countingSiswaAlpha; i++) {
-          input_siswa_alpha.innerHTML += `
-              <input type="text" name="nama_siswa_alpha[]" value=${nilaiSiswaAlpha[i]} id="nama_siswa_alpha" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-            `
-        }
-      } else {
-        input_siswa_alpha.innerHTML = ""
-        nama_siswa_alpha.classList.add('hidden')
-      }
-
       jumlah_siswa_sakit.addEventListener('input', () => {
         const val = jumlah_siswa_sakit.value
         if (val != 0) {
           nama_siswa_sakit.classList.remove('hidden')
           for (let i = 0; i < val; i++) {
             input_siswa_sakit.innerHTML += `
-              <input type="text" name="nama_siswa_sakit[]" id="nama_siswa_sakit" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+              <input type="text" name="nama_siswa_sakit[]" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)" autocomplete="off" id="nama_siswa_sakit" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
             `
           }
         } else if (val == 0) {
@@ -194,7 +164,7 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
           nama_siswa_alpha.classList.remove('hidden')
           for (let i = 0; i < val; i++) {
             input_siswa_alpha.innerHTML += `
-              <input type="text" name="nama_siswa_alpha[]" id="nama_siswa_alpha" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+              <input type="text" name="nama_siswa_alpha[]" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)" autocomplete="off" id="nama_siswa_alpha" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
             `
           }
         } else if (val == 0) {
@@ -209,7 +179,7 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
           nama_siswa_izin.classList.remove('hidden')
           for (let i = 0; i < val; i++) {
             input_siswa_izin.innerHTML += `
-              <input type="text" name="nama_siswa_izin[]" id="nama_siswa_izin" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+              <input type="text" name="nama_siswa_izin[]" oninput="this.value = this.value.charAt(0).toUpperCase() + this.value.slice(1)" autocomplete="off" id="nama_siswa_izin" class="bg-gray-50 mb-2 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
             `
           }
         } else if (val == 0) {
@@ -218,6 +188,57 @@ $nilaiStringSiswaAlpha = explode(', ', $namaSiswaAlpha);
         }
       })
     }
+
+    // Generate teacher name when user input kode guru
+    document.getElementById('kode_guru').addEventListener('input', function() {
+      if (!this.value) {
+        document.getElementById('nama_guru').value = ""
+      } else {
+        document.getElementById('nama_guru').classList.add("dark:text-red-500")
+        document.getElementById('nama_guru').classList.remove("dark:text-white")
+        const kodeGuru = this.value; // Dapatkan nilai Kode Guru
+
+        fetch('../controller/getNameGuru.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              kode_guru: kodeGuru
+            })
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json(); // Ubah respons ke format JSON
+          })
+          .then(data => {
+            try {
+              if (data.error) {
+                document.getElementById('nama_guru').classList.add("dark:text-red-500")
+                document.getElementById('nama_guru').classList.remove("dark:text-white")
+                document.getElementById('nama_guru').value = data.error;
+              } else {
+                setTimeout(() => {
+                  document.getElementById('nama_guru').value = "Loading..."
+                  setTimeout(() => {
+                    document.getElementById('nama_guru').classList.remove("dark:text-red-500")
+                    document.getElementById('nama_guru').classList.add("dark:text-white")
+                    document.getElementById('nama_guru').value = data.nama_guru;
+                  }, 500)
+                }, 1)
+              }
+            } catch (error) {
+              console.error('Error parsing JSON:', error);
+            }
+          })
+          .catch(error => {
+            console.error('Fetch error:', error);
+          });
+      }
+    });
+
     generateColumnSiswa()
   </script>
 </body>

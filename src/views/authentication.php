@@ -23,7 +23,6 @@ if(isset($_POST['submit'])){
   <title>Login Jurnal</title>
   <script src="../../assets/js/tailwind.js"></script>
 </head>
-
 <body class="antialiased dark:text-slate-100 bg-white dark:bg-slate-900">
   <div class="h-screen flex items-center justify-center">
     <form action="" method="post" class="flex flex-col gap-4 w-3/12">

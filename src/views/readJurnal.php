@@ -87,8 +87,9 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
 
           <!-- Dropdown menu -->
           <div id="dropdownDotsHorizontal" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
-              <a id="btn_changeClass" class="block flex flex-row gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white cursor-pointer">
+            <ul class="py-2 text-sm text-black dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton">
+              <!-- <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconHorizontalButton"> -->
+              <a id="btn_changeClass" class="block flex flex-row gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white dark:text-white cursor-pointer">
                 <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                   <path fill="#ffffff" d="M0 168v-16c0-13.3 10.7-24 24-24h360V80c0-21.4 25.9-32 41-17l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80C410 272 384 261.5 384 240v-48H24c-13.3 0-24-10.7-24-24zm488 152H128v-48c0-21.3-25.9-32.1-41-17l-80 80c-9.4 9.4-9.4 24.6 0 33.9l80 80C102.1 464 128 453.4 128 432v-48h360c13.3 0 24-10.7 24-24v-16c0-13.3-10.7-24-24-24z" />
                 </svg>
@@ -129,16 +130,9 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
                     </svg>
                     Cetak Jurnal</a>
                   </li>
-                  <li class="hidden">
-                    <a id="btn_exportJurnal" class="block flex flex-row gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer">
-                      <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="#e6e6e6" d="M448 192V77.3c0-8.5-3.4-16.6-9.4-22.6L393.4 9.4c-6-6-14.1-9.4-22.6-9.4H96C78.3 0 64 14.3 64 32v160c-35.4 0-64 28.7-64 64v112c0 8.8 7.2 16 16 16h48v96c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32v-96h48c8.8 0 16-7.2 16-16V256c0-35.4-28.7-64-64-64zm-64 256H128v-96h256v96zm0-224H128V64h192v48c0 8.8 7.2 16 16 16h48v96zm48 72c-13.3 0-24-10.8-24-24 0-13.3 10.8-24 24-24s24 10.7 24 24c0 13.3-10.8 24-24 24z" />
-                      </svg>
-                      Cetak Jurnal</a>
-                  </li>
               </ul>
-              <div class="py-2">
-                <a id="btn_changeClass" class="block flex flex-row gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white text-white cursor-pointer">
+              <div class="py-2 ">
+                <a id="btn_changeClass" class="block flex flex-row gap-3 px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white text-black cursor-pointer">
                   <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="#ffffff" d="M0 168v-16c0-13.3 10.7-24 24-24h360V80c0-21.4 25.9-32 41-17l80 80c9.4 9.4 9.4 24.6 0 33.9l-80 80C410 272 384 261.5 384 240v-48H24c-13.3 0-24-10.7-24-24zm488 152H128v-48c0-21.3-25.9-32.1-41-17l-80 80c-9.4 9.4-9.4 24.6 0 33.9l80 80C102.1 464 128 453.4 128 432v-48h360c13.3 0 24-10.7 24-24v-16c0-13.3-10.7-24-24-24z" />
                   </svg>
@@ -226,7 +220,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
                     <?php if ($_SESSION['username'] == "user" && $_SESSION['password'] == "user3321") : ?>
                       <tr class="hover:bg-sky-950 cursor-pointer">
                       <?php elseif ($_SESSION['username'] == "admin" && $_SESSION['password'] == "admin1233") : ?>
-                      <tr class="hover:bg-sky-950 cursor-pointer" onclick="window.location.href = './edit.php?id_jurnal=<?= $row['id_jurnal'] ?>'">
+                      <tr class="hover:bg-gray-100 dark:hover:bg-sky-950 cursor-pointer" onclick="window.location.href = './edit.php?id_jurnal=<?= $row['id_jurnal'] ?>'">
                       <?php endif ?>
                       <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-4 text-slate-500 dark:text-slate-400" id="tb_body_nomor"><?= $no++ ?></td>
                       <td class="border-b border-slate-100 dark:border-slate-700 p-4 pl-4 text-slate-500 dark:text-slate-400" id="tb_body_tanggal"><?= $row['tanggal'] ?></td>
@@ -300,10 +294,6 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
           </div>
         </div>
 
-        <div>
-
-        </div>
-
         <div class="flex flex-row gap-2 w-30">
           <div class="flex flex-col w-28">
             <label for="jam_ke" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jam Ke</label>
@@ -331,21 +321,21 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
         </div>
         <div class="flex flex-row gap-2">
           <div class="flex flex-col w-full">
-            <label for="jumlah_siswa_hadir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Hadir</label>
-            <input type="text" autocomplete="off" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_hadir" id="jumlah_siswa_hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-          </div>
-          <div class="flex flex-col w-full">
             <label for="jumlah_siswa_izin" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Izin</label>
-            <input type="text" autocomplete="off" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_izin" id="jumlah_siswa_izin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+            <input type="text" autocomplete="off" value="0" oninput="operationSiswaHadir()" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_izin" id="jumlah_siswa_izin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
           </div>
 
           <div class="flex flex-col w-full">
             <label for="jumlah_siswa_sakit" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Sakit</label>
-            <input type="text" autocomplete="off" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_sakit" id="jumlah_siswa_sakit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+            <input type="text" autocomplete="off" value="0" oninput="operationSiswaHadir()" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_sakit" id="jumlah_siswa_sakit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
           </div>
           <div class="flex flex-col w-full">
             <label for="jumlah_siswa_alpha" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Alpha</label>
-            <input type="text" autocomplete="off" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_alpha" id="jumlah_siswa_alpha" class="bg-gray-50 border border-gray-300 number-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+            <input type="text" autocomplete="off" value="0" oninput="operationSiswaHadir()" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_alpha" id="jumlah_siswa_alpha" class="bg-gray-50 border border-gray-300 number-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" />
+          </div>
+          <div class="flex flex-col w-full">
+            <label for="jumlah_siswa_hadir" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Siswa Hadir</label>
+            <input type="text" autocomplete="off" oninput="operationSiswaHadir()" value="<?= $resultQueryReadNama['jumlah_siswa'] ?>" onkeypress="return validateOnlyNumber(event)" name="jumlah_siswa_hadir" id="jumlah_siswa_hadir" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
           </div>
         </div>
         <div class="text-4xl font-semibold hidden" id="nama_siswaIzin">
@@ -369,6 +359,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
   </div>
   <?php if ($_SESSION['username'] == $ADMIN_USERNAME && $_SESSION['password'] == $ADMIN_PASSWORD) : ?>
     <script>
+      // Input only number
       const validateOnlyNumber = (evt) => {
         var charCode = (evt.which) ? evt.which : event.keyCode;
         if (charCode > 31 && (charCode < 48 || charCode > 57)) {
@@ -377,6 +368,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
         return true;
       }
 
+      // Generate input name siswa field (izin, sakit, alpha)
       const generateColumnSiswa = () => {
         const
           jumlah_siswa_izin = document.getElementById("jumlah_siswa_izin"),
@@ -439,6 +431,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
         })
       }
 
+      // Open modal function
       const modalFunction = () => {
         const
           openModalBtn = document.getElementById('btn_addJurnal'),
@@ -465,18 +458,35 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
           if (input.value.length == 1 || input.value.length == 1) {
             setTimeout(() => {
               input.value += defaultValue
-            }, 1000)
+            }, 300)
           }
         })
       }
 
+      // Substraction siswa hadir when user input siswa izin, siswa sakit, siswa alpha
+      const operationSiswaHadir = () => {
+        let siswa_hadir = document.getElementById('jumlah_siswa_hadir');
+        let siswa_izin = parseInt(document.getElementById('jumlah_siswa_izin').value) || 0;
+        let siswa_sakit = parseInt(document.getElementById('jumlah_siswa_sakit').value) || 0;
+        let siswa_alpha = parseInt(document.getElementById('jumlah_siswa_alpha').value) || 0;
+
+        if (siswa_izin || siswa_sakit || siswa_alpha) {
+          siswa_hadir.value = <?= $resultQueryReadNama['jumlah_siswa'] ?> - siswa_izin - siswa_sakit - siswa_alpha;
+        } else {
+          // Jika tidak ada izin, sakit, atau alpha, maka isi dengan jumlah siswa
+          siswa_hadir.value = <?= $resultQueryReadNama['jumlah_siswa'] ?>;
+        }
+      }
+
+      // Generate teacher name when user input kode guru
       document.getElementById('kode_guru').addEventListener('input', function() {
         if (!this.value) {
           document.getElementById('nama_guru').value = ""
         } else {
           document.getElementById('nama_guru').classList.add("dark:text-red-500")
           document.getElementById('nama_guru').classList.remove("dark:text-white")
-          const kodeGuru = this.value; // Get value Kode Guru
+          const kodeGuru = this.value; // Dapatkan nilai Kode Guru
+
           fetch('../controller/getNameGuru.php', {
               method: 'POST',
               headers: {
@@ -490,24 +500,24 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
               if (!response.ok) {
                 throw new Error('Network response was not ok');
               }
-              return response.text(); // Change respons to text
+              return response.json(); // Ubah respons ke format JSON
             })
             .then(data => {
               try {
-                const parsedData = JSON.parse(data); // Change text to json
-                setTimeout(() => {
-                  document.getElementById('nama_guru').value = "Loading..."
+                if (data.error) {
+                  document.getElementById('nama_guru').classList.add("dark:text-red-500")
+                  document.getElementById('nama_guru').classList.remove("dark:text-white")
+                  document.getElementById('nama_guru').value = data.error;
+                } else {
                   setTimeout(() => {
-                    document.getElementById('nama_guru').classList.remove("dark:text-red-500")
-                    document.getElementById('nama_guru').classList.add("dark:text-white")
-                    document.getElementById('nama_guru').value = parsedData.nama_guru;
-                    if (document.getElementById('nama_guru').value == "undefined") {
-                      document.getElementById('nama_guru').classList.add("dark:text-red-500")
-                      document.getElementById('nama_guru').classList.remove("dark:text-white")
-                      document.getElementById('nama_guru').value = "ID Guru tidak ditemukan";
-                    }
-                  }, 1000)
-                }, 1)
+                    document.getElementById('nama_guru').value = "Loading..."
+                    setTimeout(() => {
+                      document.getElementById('nama_guru').classList.remove("dark:text-red-500")
+                      document.getElementById('nama_guru').classList.add("dark:text-white")
+                      document.getElementById('nama_guru').value = data.nama_guru;
+                    }, 500)
+                  }, 1)
+                }
               } catch (error) {
                 console.error('Error parsing JSON:', error);
               }
@@ -518,6 +528,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
         }
       });
 
+      // Alert when user can't select tahun ajaran and semester
       const formValidate = () => {
         const
           selectTahunAjaran = document.getElementById("cmb_selectTahunAjaran"),
@@ -532,6 +543,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
         }
       }
 
+      // User click in dropdown
       const headerClick = () => {
         document.getElementById('btn_logOut').addEventListener('click', () => {
           window.location.href = "./authentication.php"
@@ -547,6 +559,7 @@ $resultQueryReadId = mysqli_fetch_all($runQueryReadId, MYSQLI_ASSOC);
         })
       }
 
+      // operationSiswaHadir()
       headerClick()
       generateColumnSiswa()
       modalFunction()
